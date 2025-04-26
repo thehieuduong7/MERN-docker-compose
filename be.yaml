@@ -10,15 +10,6 @@ services:
     depends_on:
       - mongodb
 
-  frontend:
-    build: ./mern/frontend
-    ports:
-      - "5173:5173"
-    networks:
-      - mern_network
-    environment:
-      VITE_REACT_APP_API_URL: http://10.0.19.19:8000/
-
   mongodb:
     image: mongo:latest
     ports:
